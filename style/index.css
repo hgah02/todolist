@@ -81,11 +81,14 @@ li{
 }
 
 li>span{
+    color: black;
+    width: 300px;
+    display: inline-block;
     white-space: nowrap; 
-    width: 85%; 
+    
     overflow: hidden;
     text-overflow: ellipsis; 
-}
+} 
 
 .editBtn,.deleteBtn{
     float: right;
@@ -113,7 +116,7 @@ li>span{
     color: #e9e2d7;
 }
 
-.completed { 
+.completed>span{ 
     color: #aaa;
     text-decoration: line-through;
 }

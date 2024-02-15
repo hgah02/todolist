@@ -15,6 +15,10 @@
             <button type="submit"><i class="fa-solid fa-plus" id="btnAddList"></i></button>
         </form>
         <ul id="note-list">
+            <li class="completed"><span>${note.note}</span>
+                <!--<button class="editBtn" onclick=editNote(this.parentElement,${index})><span>Sửa</span></button>-->
+                <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
+            </li>
         </ul>
         <div>
             <button class="clear" onclick="clearData()"><span>Clear all</span></button>

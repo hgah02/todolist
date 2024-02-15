@@ -27,8 +27,7 @@ render()
 function render(){
     const output = notes.map((note,index)=>{
         return html`
-        <li ${note.status && 'class = completed'}><span onclick=handleCompleted(this.parentElement,${index && 1})>${note.note}</span>
-            <!--<button class="editBtn" onclick=editNote(this.parentElement,${index})><span>Sửa</span></button>-->
+        <li ${note.status && 'class = completed'}><span onclick=handleCompleted(this.parentElement,${index})>${note.note}</span>
             <button class="deleteBtn" onclick=deleteNote(this.parentElement,${index})><i class="fa-solid fa-trash"></i></button>
         </li>
         `
@@ -53,16 +52,15 @@ form.addEventListener("submit",function addNote(e){
 })
 
 // xoa 1 note trong list
-function deleteNote(element,index){
-    countDelete += 1
+function deleteNote(element,index = 1){
     element.remove()
     notes.splice(index-countDelete,1)
     handleData()
+    countDelete += 1
 }
 
 // xu ly them class = completed hoac bo di 
 function handleCompleted(element,index = 1){
-    console.log(element)
     if(notes[index].status){
         notes[index].status = null
         element.removeAttribute('class')
@@ -84,13 +82,5 @@ function clearData(){
     notes = []
     noteList.innerHTML = ''
 }
-
-// // chinh sua note
-// function editNote(element,index){
-//     console.log(element)
-//     const oldValue = element.value
-//     element = `<input>` 
-//     element.innerHTML = element
-// }
 
 
